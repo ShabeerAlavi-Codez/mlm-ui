@@ -14,9 +14,9 @@ class Home extends React.Component {
 
         return <div>
 
-            <div id="preloader" className="inso-preloader">
+            {/* <div id="preloader" className="inso-preloader">
                 <span className="loader"></span>
-            </div>
+            </div> */}
 
             <div className="o-hidden">
                 <div className="offcanvase">
