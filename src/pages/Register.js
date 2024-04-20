@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from 'react-redux'
 import { useNavigate,Link } from 'react-router-dom'
-//import { signup } from '../../features/registerSlice'
+import { signup } from '../features/registerSlice'
 import Progress from "../common/Progress";
 
 
@@ -44,7 +44,7 @@ export default function Register() {
     if (canSubmit) {
       try {
         setSignupRequestStatus('pending');
-         // await dispatch(signup(formData)).unwrap();
+          await dispatch(signup(formData)).unwrap();
           setFormData({
             name: '',
             mobile: '',
@@ -75,27 +75,27 @@ export default function Register() {
                             <h3 className="text-white text-center mt-5">Sign Up</h3>
 
                             <div className="login__form input__form p-4">
-                                <form action="#">
+                                <form onSubmit={handleSubmit}>
                                 <div className="form-group">
-                                        <input type="text" className="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter Your Name" />
+                                        <input type="text" value={formData.name} onChange={handleChange} id="name" name="name"  className="form-control" id="exampleInputEmail1"
+                                            placeholder="Enter Your Name" required />
                                     </div>
                                     <div className="form-group">
-                                        <input type="number" className="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter Your mobile" />
+                                        <input type="number" value={formData.mobile} onChange={handleChange} id="mobile" name="mobile"  className="form-control" id="exampleInputEmail1"
+                                            placeholder="Enter Your mobile" required />
                                     </div>
 
                                     <div className="form-group">
-                                        <input type="email" className="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter Your Email" />
+                                        <input type="email"  value={formData.email} onChange={handleChange} id="email" name="email" className="form-control" id="exampleInputEmail1"
+                                            placeholder="Enter Your Email" required/>
                                     </div>
                                     <div className="form-group">
-                                        <input type="password" className="form-control" id="exampleInputPassword11"
-                                            placeholder="Enter Your Password" />
+                                        <input type="password" value={formData.password} onChange={handleChange} id="password" name="password"  className="form-control" id="exampleInputPassword11"
+                                            placeholder="Enter Your Password" required />
                                     </div>
                                     <div className="form-group">
-                                        <input type="password" className="form-control" id="exampleInputPassword11"
-                                            placeholder="Confirm pasaword" />
+                                        <input type="password" value={formData.cpassword} onChange={handleChange} id="Cpassword" name="Cpassword" className="form-control" id="exampleInputPassword11"
+                                            placeholder="Confirm pasaword"  required/>
                                     </div>
 
 
