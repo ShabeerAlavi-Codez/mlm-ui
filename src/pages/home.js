@@ -1,13 +1,68 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+// import { increment } from "../../features/counterSlice";
+import { useState } from "react";
+import { signin } from "../features/registerSlice";
 import { useNavigate,Link } from 'react-router-dom'
 
 const scrollToClass = () => {
     const element = document.getElementById('login-class');
     element.scrollIntoView({ behavior: 'smooth' });
   };
-class Home extends React.Component {
+  export default function Home(){
 
-    render() {
+    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [formData, setFormData] = useState({
+      email: '',
+      password: '',
+    });
+    const [errormsg,setErrormsg]=useState("");
+    const [signinRequestStatus,setSigninRequestStatus]=useState('idle');
+    const navigate=useNavigate();
+    const dispatch=useDispatch();
+  
+    const handleChange=(e)=>{
+      const {name,value}=e.target;
+      setFormData(prevState => ({
+        ...prevState,
+        [name]: value
+      }));
+    }
+    const handleLogin =async (e) => {
+      console.log("hann",e,"jjjdata",formData)
+        e.preventDefault();
+          try {
+             setIsLoading(true)
+            setSigninRequestStatus('pending')
+            const response = await dispatch(signin(formData)).unwrap();
+            setFormData({
+            email: '',
+            password: ''})
+           // console.log(response.token,"resppppp")
+            localStorage.setItem("token",response.token)
+            localStorage.setItem('_i',response._id)
+            localStorage.setItem('_n',response.name)
+            localStorage.setItem('_e',response.email)
+            localStorage.setItem('_m',response.mobile)
+             navigate('/udashboard')
+          } catch (err) {
+            console.log(err,"errrrr")
+            //setSigninRequestStatus('idle')
+            // console.error(err.response.data.errors)
+            setErrormsg(err.response.data.errors)
+            // if(err.response.data.info){
+            //   navigate('/smaintance')
+            // }
+          } finally {
+            setSigninRequestStatus('idle')
+            setIsLoading(false)
+          }
+      };
+  
+
+
+  
         const myStyles = {
             backgroundImage: "url('/assets/images/banner2.png')",
             backgroundSize: 'cover',
@@ -17,7 +72,7 @@ class Home extends React.Component {
             // Adjust other styles as needed
         };
 
-        return <div>
+        return (<div>
 
             {/* <div id="preloader" className="inso-preloader">
                 <span className="loader"></span>
@@ -207,8 +262,8 @@ class Home extends React.Component {
                             <div className="slider__wrapper">
 
                                 <div className="slider__single">
-                                {/* <img src="assets/images/building.jpeg" alt="slider" /> */}
-                                    <img src="assets/images/banner.png" alt="slider" />
+                                 <img src="assets/images/building.jpg" alt="slider" /> 
+                                    {/* <img src="assets/images/banner.png" alt="slider" /> */}
                                     <ul className="slider--content">
                                         <li><img src="assets/img/hero/customer-1.jpg" alt="1" /></li>
                                         <li><img src="assets/img/hero/customer-2.jpg" alt="1" /></li>
@@ -501,8 +556,7 @@ class Home extends React.Component {
 
 
 
-        </div >
-    }
+        </div >)
+    
 }
 
-export default Home;
