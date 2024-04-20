@@ -1,5 +1,10 @@
 import React from "react";
+import { useNavigate,Link } from 'react-router-dom'
 
+const scrollToClass = () => {
+    const element = document.getElementById('login-class');
+    element.scrollIntoView({ behavior: 'smooth' });
+  };
 class Home extends React.Component {
 
     render() {
@@ -36,10 +41,10 @@ class Home extends React.Component {
                             </div>
                             <div className="offcanvase-menu o-hidden mb-30"></div>
                             <div className="offcanvase__button mb-30">
-                                <a className="login" href="login.html">Login</a>
-                                <a className="signup" href="register.html">Sign Up</a>
+                                <a className="login" href="#" onClick={scrollToClass} >Login</a>
+                                <a className="signup" href="/register">Sign Up</a>
                             </div>
-                            <div className="offcanvase__menu--contact center">
+                            {/* <div className="offcanvase__menu--contact center">
                                 <h4 className="offcanvase__menu--contact-title mb-20">Contact Us</h4>
                                 <div className="offcanvase__menu--contact-text">
                                     <ul>
@@ -48,7 +53,7 @@ class Home extends React.Component {
                                     </ul>
                                     <p>Kushtia Sador, Kushtia, Bangladesh</p>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="offcanvase__menu--social">
                                 <ul className="d-flex justify-content-center gap-3">
                                     <li className="social-item"><a href="#" target="_blank"><i
@@ -61,9 +66,9 @@ class Home extends React.Component {
                                         className="fa-brands fa-linkedin"></i></a></li>
                                 </ul>
                             </div>
-                            <div className="thanks-giving mt-5">
+                            {/* <div className="thanks-giving mt-5">
                                 <img src="assets/img/thanks.jpg" alt="thank you" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -144,8 +149,8 @@ class Home extends React.Component {
                             </div>
                             <div className="header__right">
                                 <div className="header__right--btn">
-                                    <a className="login" href="login.html">Login</a>
-                                    <a className="signup" href="register.html">Sign Up</a>
+                                    <a className="login" href="#" onClick={scrollToClass} >Login</a>
+                                    <a className="signup" href="/register">Sign Up</a>
                                 </div>
                                 <button className="menu-icon d-md-block d-lg-none"><i className="fa-sharp fa-solid fa-bars"></i>
                                 </button>
@@ -183,9 +188,7 @@ class Home extends React.Component {
                                                         </div> --> */}
                                 </div>
 
-                                <p>Your website is often the first point of contact with potential customers. Expert web
-                                    designers can create user-friendly, visually appealing websites that reflect your brand and
-                                    convert visitors into customers.
+                                <p>Welcome to our premier money helping platform, where financial empowerment meets community support. Join a network of individuals dedicated to mutual assistance and prosperity. Experience the power of collective financial growth today!
                                 </p>
                                 <div className="hero__button">
                                     <a href="#" className="rounded-btn">Get in Touch <span><i
@@ -204,6 +207,7 @@ class Home extends React.Component {
                             <div className="slider__wrapper">
 
                                 <div className="slider__single">
+                                {/* <img src="assets/images/building.jpeg" alt="slider" /> */}
                                     <img src="assets/images/banner.png" alt="slider" />
                                     <ul className="slider--content">
                                         <li><img src="assets/img/hero/customer-1.jpg" alt="1" /></li>
@@ -444,7 +448,7 @@ class Home extends React.Component {
             </section>
 
 
-            <div className="container mt- mb-20">
+            <div id="login-class" className="container mt- mb-20">
                 <div className="card bg-dark p-3 shadow">
                     <div className="row">
                         <div className="col-lg-6"><br /><br />
@@ -466,6 +470,9 @@ class Home extends React.Component {
                                     <div className="login-button register-button">
                                         <button type="submit" className="main-btn">Login</button>
                                     </div>
+                                    <p className="text-white text-center mt-2">
+                                     Don't have an account ?<Link to="/register"> Sign Up </Link>
+                                    </p>
                                 </form>
                             </div>
                         </div>
@@ -478,7 +485,7 @@ class Home extends React.Component {
 
 
             <div style={myStyles}>
-                <h5>📱✨ Exciting news ahead! 🚀 Stay tuned for our iOS and Android app! 🎉</h5>
+                <marquee><h5>📱✨ Exciting news ahead! 🚀 Stay tuned for our iOS and Android app! 🎉</h5></marquee>
             </div>
 
 
