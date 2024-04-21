@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import { useDispatch, useSelector } from 'react-redux';
-import { sApprove, sReject } from "../../features/nodelistSlice";
-import { BASE_URI } from '../../../config/keys-dev';
+import { sApprove, sReject } from "../features/nodelistSlice";
+import { BASE_URI } from '../config/keys-dev';
 
 export default function Notification() {
   const [apidata, setData] = useState(null);
@@ -113,12 +113,12 @@ export default function Notification() {
             ) : (
               <p>No notifications available</p>
             )}
-            <p className="relative top-30 text-center text-gray-600 textbase mt-9">
+            {/* <p className="relative top-30 text-center text-gray-600 textbase mt-9">
               Still have questions?
               <a href='#' ><span className="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">Contact
                 our support
               </span> </a>
-            </p>
+            </p> */}
           </div> 
 
         </div>

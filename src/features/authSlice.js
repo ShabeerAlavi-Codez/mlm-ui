@@ -1,6 +1,6 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
-import { BASE_URI} from '../../config/keys-dev';
+import { BASE_URI} from '../config/keys-dev';
 
 const initialState ={
     userId:'',

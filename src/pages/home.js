@@ -262,7 +262,7 @@ const scrollToClass = () => {
                             <div className="slider__wrapper">
 
                                 <div className="slider__single">
-                                 <img src="assets/images/building.jpg" alt="slider" /> 
+                                 <img src="assets/images/building1.jpg" alt="slider" /> 
                                     {/* <img src="assets/images/banner.png" alt="slider" /> */}
                                     <ul className="slider--content">
                                         <li><img src="assets/img/hero/customer-1.jpg" alt="1" /></li>
@@ -510,14 +510,14 @@ const scrollToClass = () => {
                             <h3 className="text-white text-center mt-5">Sign In</h3>
 
                             <div className="login__form input__form p-4">
-                                <form action="#">
-
+                                <form onSubmit={handleLogin}>
+                                <p className={errormsg ? "alert alert-danger mt-2" : ""} >{errormsg}</p>
                                     <div className="form-group">
-                                        <input type="email" className="form-control" id="exampleInputEmail1"
+                                        <input type="email" className="form-control" value={formData.email} onChange={handleChange} name="email"  id="exampleInputEmail1"
                                             placeholder="Enter Your Email" />
                                     </div>
                                     <div className="form-group">
-                                        <input type="password" className="form-control" id="exampleInputPassword11"
+                                        <input type="password" value={formData.password} onChange={handleChange} name="password"  className="form-control" id="exampleInputPassword11"
                                             placeholder="Enter Your Password" />
                                     </div>
 

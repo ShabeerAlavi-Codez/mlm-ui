@@ -1,9 +1,9 @@
 
-import Accordion from './Accordion'; 
+ import Accordion from './Accordion'; 
 import { useState,useEffect } from 'react'; 
 import Navbar from './Navbar'; 
 import { useDispatch,useSelector } from 'react-redux';
-import { BASE_URI} from '../../../config/keys-dev';
+import { BASE_URI} from '../config/keys-dev';
 
 export default function Dashboard() {
     const [name,setName]=useState('');
@@ -86,11 +86,11 @@ export default function Dashboard() {
         </a>
         </div> 
 
-            <footer className="fixed  bottom-0 w-full bg-gray-800 text-white py-2 text-center">
+            {/* <footer className="fixed  bottom-0 w-full bg-gray-800 text-white py-2 text-center">
         <p className="text-sm">Still have questions? <a href='#' ><span className="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">Contact
                 our support
             </span> </a> </p>
-      </footer>
+      </footer> */}
       
             
            

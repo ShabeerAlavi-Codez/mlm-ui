@@ -86,7 +86,7 @@ export default function Register() {
                                     </div>
 
                                     <div className="form-group">
-                                        <input type="email"  value={formData.email} onChange={handleChange} id="email" name="email" className="form-control" id="exampleInputEmail1"
+                                        <input type="email" autoComplete="off" value={formData.email} onChange={handleChange} id="email" name="email" className="form-control" id="exampleInputEmail1"
                                             placeholder="Enter Your Email" required/>
                                     </div>
                                     <div className="form-group">

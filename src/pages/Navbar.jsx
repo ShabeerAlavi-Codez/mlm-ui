@@ -1,8 +1,8 @@
 // Navbar.js 
 import { useDispatch } from 'react-redux'; // Import for dispatching actions
 import { useNavigate } from 'react-router-dom'; // Import for navigation
-import { signout } from '../../features/registerSlice'; 
-import Logo3 from '../../assets/logo3.png'
+import { signout } from '../features/registerSlice'; 
+import Logo3 from '../assets/logo.png'
 
 export default function Navbar({from}) { 
 	const dispatch = useDispatch();
@@ -25,23 +25,23 @@ export default function Navbar({from}) {
 		
 
 
-<nav className="bg-gray-900 fixed w w-full z-20 top-0 start-0 border-b border-gray-200">
-  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <a href="#!" className="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src={Logo3} className="w-44" alt="Flowbite Logo"/>
-      <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+<nav style ={{"position":"fixed","top":"0","zIndex":20,"borderBottomWidth":"1px","borderColor":"#E5E7EB","width":"100%","backgroundColor":"#111827"}}>
+  <div style={{"display":"flex","padding":"1rem","flexWrap":"wrap","justifyContent":"space-between","alignItems":"center","maxWidth":"1280px"}}>
+  <a href="#!" style={{"display":"flex","marginLeft":["0.75rem","0.875rem"],"alignItems":"center"}}>
+      <img src={Logo3} style={{"width":"11rem"}} alt="Flowbite Logo"/>
+      <span style={{"alignSelf":"center","fontSize":"1.5rem","lineHeight":"2rem","fontWeight":600,"whiteSpace":"nowrap"}}></span>
   </a>
-  <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+  <div style={{"display":"flex","marginLeft":["0.75rem","0.875rem"],"@media (min-width: 768px)":{"marginLeft":"0","order":2}}}>
 
   {from === 'dash' && (
-      <a href='/notification' type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-2">Notifications</a>
+      <a href='/notification' type="button" style={{"paddingTop":"0.5rem","paddingBottom":"0.5rem","paddingLeft":"1rem","paddingRight":"1rem","marginRight":"0.5rem","borderRadius":"0.5rem","fontSize":"0.875rem","lineHeight":"1.25rem","fontWeight":500,"textAlign":"center","color":"#ffffff","backgroundColor":"#1D4ED8",":hover":{"backgroundColor":"#1E40AF"}}}>Notifications</a>
   )}
   {from === 'noti' && (
 
-	  <a href='/udashboard' type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-2">Dashboard</a>
+	  <a href='/udashboard' type="button" style={{"paddingTop":"0.5rem","paddingBottom":"0.5rem","paddingLeft":"1rem","paddingRight":"1rem","marginRight":"0.5rem","borderRadius":"0.5rem","fontSize":"0.875rem","lineHeight":"1.25rem","fontWeight":500,"textAlign":"center","color":"#ffffff","backgroundColor":"#1D4ED8",":hover":{"backgroundColor":"#1E40AF"}}}>Dashboard</a>
   )}
 	  
-      <button onClick={handleLogout} data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm bg-red-700 text-white rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+      <button onClick={handleLogout} data-collapse-toggle="navbar-sticky" type="button" style={{"display":"inline-flex","padding":"0.5rem","justifyContent":"center","alignItems":"center","borderRadius":"0.5rem","width":"2.5rem","height":"2.5rem","fontSize":"0.875rem","lineHeight":"1.25rem","color":"#ffffff","backgroundColor":"#B91C1C",":hover":{"backgroundColor":"#F3F4F6"}}} aria-controls="navbar-sticky" aria-expanded="false">
         <span className="sr-only">Logout</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>

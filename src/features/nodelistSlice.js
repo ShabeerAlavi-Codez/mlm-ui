@@ -1,6 +1,6 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
-import { BASE_URI} from '../../config/keys-dev';
+import { BASE_URI} from '../config/keys-dev';
 
 const initialState ={
   userId:"",
@@ -219,38 +219,38 @@ const nodelistSlice =createSlice({
     // },
     extraReducers: (builder) => {
         builder.addCase(addNode.fulfilled, (state, action) => {
-            state.name=action.payload.name,
-            state.mobile=action.payload.mobile,
-            state.ref_upiId=action.payload.ref_upiId,
-            state.isMaturedNode=action.payload.isMaturedNode,
-            state.maturedNode=action.payload.maturedNode,
-            state.nodeId=action.payload.nodeId,
-            state.ref_node=action.payload.ref_node,
-            state.ref_node_code=action.payload.ref_node_code,
-            state.ref_upiId=action.payload.ref_upiId
+            state.name=action.payload.name;
+            state.mobile=action.payload.mobile;
+            state.ref_upiId=action.payload.ref_upiId;
+            state.isMaturedNode=action.payload.isMaturedNode;
+            state.maturedNode=action.payload.maturedNode;
+            state.nodeId=action.payload.nodeId;
+            state.ref_node=action.payload.ref_node;
+            state.ref_node_code=action.payload.ref_node_code;
+            state.ref_upiId=action.payload.ref_upiId;
         })
         .addCase(fPay.fulfilled,(state,action)=> {
-          state.message=action.payload
+          state.message=action.payload;
           
         }).addCase(rejCmp.fulfilled,(state,action)=> {
           console.log(action,"actionnnnnnnnnnnn")
-          state.message=action.payload
+          state.message=action.payload;
           
         }).addCase(sApprove.fulfilled,(state,action)=> {
           console.log(action,"actionnnnnnnnnnnn")
-          state.message=action.payload
+          state.message=action.payload;
           
         }).addCase(sReject.fulfilled,(state,action)=> {
           console.log(action,"actionnnnnnnnnnnn")
-          state.message=action.payload
+          state.message=action.payload;
           
         }).addCase(sRetry.fulfilled,(state,action)=> {
           console.log(action,"actionnnnnnnnnnnn")
-          state.message=action.payload
+          state.message=action.payload;
           
         }).addCase(fRetry.fulfilled,(state,action)=> {
           console.log(action,"actionnnnnnnnnnnn")
-          state.message=action.payload
+          state.message=action.payload;
           
         })
        
