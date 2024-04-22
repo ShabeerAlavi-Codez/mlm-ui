@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from 'react-redux'
 import { useNavigate,Link } from 'react-router-dom'
 import { signup } from '../features/registerSlice'
+import Swal from 'sweetalert2'
 import Progress from "../common/Progress";
 
 
@@ -52,7 +53,15 @@ export default function Register() {
             password: '',
             cpassword: ''
           });
-        navigate('/');
+          Swal.fire({
+            title: 'Registration Successful!',
+            confirmButtonText: "OK",
+            icon: 'success',
+          }).then((result) => {
+            navigate('/');
+            
+          });
+       
       } catch (err) {
         console.error('Unable to create post:', err);
       } finally {
