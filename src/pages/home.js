@@ -5,10 +5,7 @@ import { useState } from "react";
 import { signin } from "../features/registerSlice";
 import { useNavigate,Link } from 'react-router-dom'
 
-const scrollToClass = () => {
-    const element = document.getElementById('login-class');
-    element.scrollIntoView({ behavior: 'smooth' });
-  };
+
   export default function Home(){
 
     const [loading, setLoading] = useState(false);
@@ -21,6 +18,11 @@ const scrollToClass = () => {
     const [signinRequestStatus,setSigninRequestStatus]=useState('idle');
     const navigate=useNavigate();
     const dispatch=useDispatch();
+    const scrollToClass = () => {
+        console.log("ssdddssssssssss")
+        const element = document.getElementById('login-class');
+        element.scrollIntoView({ behavior: 'smooth' });
+      };
   
     const handleChange=(e)=>{
       const {name,value}=e.target;
@@ -96,10 +98,10 @@ const scrollToClass = () => {
                             </div>
                             <div className="offcanvase-menu o-hidden mb-30"></div>
                             <div className="offcanvase__button mb-30">
-                                <a className="login" href="#" onClick={scrollToClass} >Login</a>
+                                <a className="login"  href='javascript:void(0)'  onClick={scrollToClass} >Login</a>
                                 <a className="signup" href="/register">Sign Up</a>
                             </div>
-                            {/* <div className="offcanvase__menu--contact center">
+                            {/* <div className="offf syyyoffcanvase__menu--contact center">
                                 <h4 className="offcanvase__menu--contact-title mb-20">Contact Us</h4>
                                 <div className="offcanvase__menu--contact-text">
                                     <ul>
@@ -167,7 +169,7 @@ const scrollToClass = () => {
                                                     <li className="has-children"><a href="team.html">Team</a>
                                                         <ul className="submenu">
                                                             <li><a href="team.html">Team</a></li>
-                                                            <li><a href="team-details.html">Team Details</a></li>
+                                                            <li><a href="team-details.html ttttttttt">Team Details</a></li>
                                                         </ul>
                                                     </li>
                                                     <li className="has-children"><a href="shop.html">Shop</a>
@@ -204,7 +206,7 @@ const scrollToClass = () => {
                             </div>
                             <div className="header__right">
                                 <div className="header__right--btn">
-                                    <a className="login" href="#" onClick={scrollToClass} >Login</a>
+                                    <a  className="login" href='javascript:void(0)' onClick={scrollToClass} >Login</a>
                                     <a className="signup" href="/register">Sign Up</a>
                                 </div>
                                 <button className="menu-icon d-md-block d-lg-none"><i className="fa-sharp fa-solid fa-bars"></i>
@@ -510,7 +512,7 @@ const scrollToClass = () => {
                             <h3 className="text-white text-center mt-5">Sign In</h3>
 
                             <div className="login__form input__form p-4">
-                                <form onSubmit={handleLogin}>
+                                <form onSubmit={handleLogin} method="post">
                                 <p className={errormsg ? "alert alert-danger mt-2" : ""} >{errormsg}</p>
                                     <div className="form-group">
                                         <input type="email" className="form-control" value={formData.email} onChange={handleChange} name="email"  id="exampleInputEmail1"
@@ -522,11 +524,11 @@ const scrollToClass = () => {
                                     </div>
 
 
-                                    <div className="login-button register-button">
+                                    <div className="login-button ">
                                         <button type="submit" className="main-btn">Login</button>
                                     </div>
                                     <p className="text-white text-center mt-2">
-                                     Don't have an account ?<Link to="/register"> Sign Up </Link>
+                                     Don't have an account .. ?<Link to="/register"> Sign Up </Link>
                                     </p>
                                 </form>
                             </div>
