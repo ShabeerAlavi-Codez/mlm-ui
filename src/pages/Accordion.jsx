@@ -359,7 +359,7 @@ export default function Accordion(props) {
         formData1.append('payment_try',1);
     
      
-          //console.log(ref_upiId,"kk", formData1)
+          //console.log(ref_upiId,"kk", formData1) ////
             
                e.preventDefault();
                 try {
