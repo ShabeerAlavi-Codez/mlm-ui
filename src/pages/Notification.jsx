@@ -30,6 +30,39 @@ export default function Notification() {
     fetchData(); // Call the fetch function on component mount
   }, [refresh]);
 
+  const styles={
+    "div-noti":{"position":"absolute","top":"2.5rem","paddingLeft":"1rem","paddingRight":"1rem","justifyContent":"center","alignItems":"center","maxWidth":"80rem","@media (min-width: 640px)":{"paddingLeft":"1.5rem","paddingRight":"1.5rem"},"@media (min-width: 1024px)":{"paddingLeft":"2rem","paddingRight":"2rem"}},
+   "c1":{"display":"flex","position":"relative","top":"0.25rem","padding":"1rem","backgroundColor":"#ffffff"},
+   "c2":{"position":"relative","top":"0.25rem","letterSpacing":"-0.025em","color":"#4B5563"},
+   "rt1":{"position":"relative","top":"0.50rem"},
+   "apv-div":{"display":"flex","position":"relative","top":"2.5rem","padding":"1rem","margin":"2rem","marginTop":"0.25rem","flexDirection":"column","borderRadius":"0.5rem","backgroundColor":"#ffffff","boxShadow":"0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"},
+   "rj-div":{"display":"flex","padding":"1rem","margin":"2rem","flexDirection":"column","borderRadius":"0.5rem","backgroundColor":"#ffffff","boxShadow":"0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"},
+    "rq-div":{"display":"flex","position":"relative","padding":"1rem","margin":"2rem","marginTop":"2rem","flexDirection":"column","borderRadius":"0.5rem","backgroundColor":"#ffffff","boxShadow":"0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"},
+    "apvBtn":{"display":"flex","position":"relative","padding":"1rem","margin":"2rem","marginTop":"2rem","flexDirection":"column","borderRadius":"0.5rem","backgroundColor":"#ffffff","boxShadow":"0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"},
+    "rjBtn":{"paddingTop":"0.625rem","paddingBottom":"0.625rem","paddingLeft":"1.25rem","paddingRight":"1.25rem","marginTop":"0.5rem","marginBottom":"0.5rem","borderRadius":"0.5rem","borderWidth":"1px","borderColor":"#B91C1C","fontSize":"0.875rem","lineHeight":"1.25rem","fontWeight":500,"textAlign":"center","color":"#B91C1C",":hover":{"color":"#ffffff","backgroundColor":"#991B1B"}},
+
+    "pr-2":{"paddingRight":"0.5rem"},
+    "smpb-2" :{"paddingBottom":"0.5rem","fontSize":"0.875rem","lineHeight":"1.25rem"},
+    "tracking-tight":{"fontSize":"0.875rem","lineHeight":"1.25rem","letterSpacing":"-0.025em","color":"#4B5563"},
+    "red-900":{"paddingTop":"0.625rem","paddingBottom":"0.625rem","paddingLeft":"1.25rem","paddingRight":"1.25rem","marginTop":"0.5rem","marginBottom":"0.5rem","borderRadius":"0.5rem","borderWidth":"1px","borderColor":"#B91C1C","fontSize":"0.875rem","lineHeight":"1.25rem","fontWeight":500,"textAlign":"center","color":"#B91C1C",":hover":{"color":"#ffffff","backgroundColor":"#991B1B"}},
+    "contact":{"display":"flex","position":"fixed","right":"2rem","bottom":"2.5rem","justifyContent":"center","alignItems":"center","borderRadius":"9999px","width":"5rem","height":"5rem","fontSize":"2.25rem","lineHeight":"2.5rem","color":"#ffffff","backgroundColor":"#10B981","dropShadow":"drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1))",":hover":{"backgroundColor":"#1D4ED8"}},
+    "float-right":{"cssFloat":"right"},
+    "message-text":{"fontWeight":700},
+    "loadingUp":{"paddingTop":"0.5rem","paddingBottom":"0.5rem","paddingLeft":"1rem","paddingRight":"1rem","borderRadius":"0.25rem","fontWeight":700,"color":"#ffffff","backgroundColor":"#3B82F6",":hover":{"backgroundColor":"#1D4ED8"}},
+    "input-file":{"display":"block","position":"relative","paddingLeft":"0.75rem","paddingRight":"0.75rem","margin":"0","borderRadius":"0.25rem","borderWidth":"1px","borderStyle":"solid","fontSize":"1rem","lineHeight":"1.5rem","fontWeight":400,"backgroundClip":"padding-box","transitionProperty":"background-color, border-color, color, fill, stroke, opacity, box-shadow, transform","transitionTimingFunction":["cubic-bezier(0.4, 0, 0.2, 1)","cubic-bezier(0.4, 0, 0.2, 1)"],"transitionDuration":["300ms","300ms"],":hover":{}},
+          "tb-blk":{"display":"inline-block","marginBottom":"0.5rem","color":"#000000"},
+    "label-y":{"display":"block","marginBottom":"0.5rem","fontSize":"0.875rem","lineHeight":"1.25rem","fontWeight":700,"color":"#374151"},
+    "form-f":{"paddingTop":"2.5rem","paddingBottom":"2.5rem","paddingLeft":"2.5rem","paddingRight":"2.5rem","borderRadius":"0.5rem","backgroundColor":"#ffffff","boxShadow":"0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"},
+    "md-hf":{"width":"100%","@media (min-width: 768px)":{"width":"50%"}},
+    "qr-p":{"overflow":"hidden","paddingTop":"2.5rem","paddingBottom":"2.5rem","paddingLeft":"2.5rem","paddingRight":"2.5rem","borderRadius":"0.5rem","maxWidth":"32rem","backgroundColor":"#ffffff","boxShadow":"0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"},
+    "qr-c":{"padding":"0.5rem","marginRight":"0.5rem","borderWidth":"2px","borderColor":"#EF4444"},
+    "orn-div":{"padding":"1rem","boxShadow":"0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"},
+    "acc-btn":{"padding":"1rem","borderRadius":"0.5rem","width":"100%","textAlign":"left","color":"#6B7280","backgroundColor":"#000000","transitionProperty":"background-color, border-color, color, fill, stroke, opacity, box-shadow, transform","transitionTimingFunction":"cubic-bezier(0.4, 0, 0.2, 1)","transitionDuration":["300ms","300ms"],":hover":{"backgroundColor":"#1E3A8A"}},
+    "input-r":{"paddingTop":"0.5rem","paddingBottom":"0.5rem","paddingLeft":"0.75rem","paddingRight":"0.75rem","borderRadius":"0.25rem","borderWidth":"1px","width":"100%","lineHeight":1.25,"color":"#374151","appearance":"none"},
+    "jb":{"display":"flex","justifyContent":"space-between"},
+    "ab-10":{"position":"absolute","top":"2.5rem"},
+  
+  }
   // const {name,email,mobile,firstPaymentStatus,secondPaymentStatus,bankDetailsStatus} = useSelector(state => state.register)
   // const dispatch= useDispatch();
   // useEffect(() => {
@@ -78,40 +111,40 @@ export default function Notification() {
   return (
     <>
       <Navbar from={"noti"} />
-      <div className="absolute top-10 px-4 mx-auto items-center justify-center sm:px-6 lg:px-8 max-w-7xl">
-        <div className="relative top-1  bg-white mx-auto  p-4 notification-box flex">
-          <div className="relative top-1  text-gray-600 tracking-tight">
-            <h4 className="relative top-1">notification</h4>
+      <div style={styles['div-noti']} >
+        <div style={styles.c1}>
+          <div style={styles.c2} >
+            <h4 style={styles.rt1}>notification</h4>
             {apidata && apidata.length > 0 ? (
               apidata.map((data, index) => (
                 data.payment_status === "approved" ? (
-                  <div key={index} className='relative top-10 flex flex-col shadow-lg rounded-lg bg-white mx-auto m-8 p-4 notification-box mt-1'>
+                  <div key={index} style={styles["apv-div"]}>
                     <p>Payment from: {data.name}</p>
                     <p>Payee Details: {data.mobile}</p>
-                    <p className='text-lime-500 !important'>Status: approved </p>
+                    <p  style={{color:"green !important"}}>Status: approved </p>
                   </div>
                 ) : data.payment_status === "rejected" ? (
-                  <div key={index} className='relative top-30 flex flex-col shadow-lg rounded-lg bg-white mx-auto m-8 p-4 notification-box mt-8'>
+                  <div key={index} style={styles["rj-div"]} >
                     <p>Payment from: {data.name}</p>
                     <p>Payee Details: {data.mobile}</p>
-                    <p className='text-red-500 !important'>Status: rejected </p>
+                    <p  style={{color:"red !important"}} >Status: rejected </p>
                     
                   </div>
                 ) : (
-                  <div key={index} className='relative top-30 flex flex-col shadow-lg rounded-lg bg-white mx-auto m-8 p-4 notification-box mt-8'>
+                  <div key={index} style={styles["rq-div"]}>
                     <p>Payment from: {data.name}</p>
                     <p>Payee Details: {data.mobile}</p>
-                    <p className='text-cyan-500 !important'>Status: Requested </p>
+                    <p style={{color:"blue !important"}} >Status: Requested </p>
                     <img src={`${BASE_URI}uploads/spay/${data.userId}.png`} style={{ height: 400 }} width={200} />
                     <div>
-                      <button onClick={() => handleApprove(data)} className='text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2'>Approved</button>
-                      <button onClick={() => handleReject(data)} className='text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 mt-2'>Rejected</button>
+                      <button onClick={() => handleApprove(data)} style={styles.apvBtn}>Approved</button>
+                      <button onClick={() => handleReject(data)} style={styles.rjBtn}>Rejected</button>
                     </div>
                   </div>
                 )
               ))
             ) : (
-              <p>No notifications available</p>
+              <p style={{color:"black"}}>No notifications available</p>
             )}
             {/* <p className="relative top-30 text-center text-gray-600 textbase mt-9">
               Still have questions?

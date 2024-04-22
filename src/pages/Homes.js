@@ -528,7 +528,7 @@ import { useNavigate,Link } from 'react-router-dom'
                                         <button type="submit" className="main-btn">Login</button>
                                     </div>
                                     <p className="text-white text-center mt-2">
-                                     Don't have an account .. ?<Link to="/register"> Sign Up </Link>
+                                     Don't have an account ?<Link to="/register"> Sign Up </Link>
                                     </p>
                                 </form>
                             </div>
