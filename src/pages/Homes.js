@@ -6,7 +6,7 @@ import { signin } from "../features/registerSlice";
 import { useNavigate,Link } from 'react-router-dom'
 
 
-  export default function Home(){
+  export default function Homes(){
 
     const [loading, setLoading] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
