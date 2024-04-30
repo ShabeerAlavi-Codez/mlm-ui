@@ -46,6 +46,7 @@ export default function Accordion(props) {
      const [error,setError]=useState(null);
      const [isLoading, setIsLoading] = useState(false);
      const [qr, setQr]=useState('')
+     const [amount,setAmt]=useState(0);
      const [upiId,setUpiId]=useState('');
      const [fullname,setFullname]=useState('');
      const [accNo,setAccno]=useState('');
@@ -70,6 +71,7 @@ export default function Accordion(props) {
             await dispatch(getUser(localStorage.getItem("_i")))
             setData(fetchedData.data);
             setQr(fetchedData.data[0].UpiId)
+            setAmt(fetchedData.data[0].Amt)
           } catch (error) {
             console.error('Error fetching data:', error); // Handle errors gracefully
           } finally {
@@ -291,14 +293,14 @@ export default function Accordion(props) {
     formData.append('imgUri', file);
     formData.append('firstPaymentStatus',firstPaymentStatus);
     formData.append('payment_status',"requested");
-    formData.append('payment_amount', 500);
+    formData.append('amount', amount);
     formData.append('payment_date',new Date());
     formData.append('cmp_upi', qr);
     formData.append('payment_try',1);
 
  
       
-        console.log("hann",e,"jjjdata",formData)
+      //  console.log("hann",e,"jjjdata",formData)
            e.preventDefault();
             try {
                 if(upiId=='' || formData.userId ==''){
@@ -755,7 +757,7 @@ paddingBottom: "2rem" }}>
                     <QRCode
                     size={256}
                     style={{...styles["qr-c"], height: "155", maxWidth: "200", width: "155" }}
-                    value={`upi://pay?pa=${qr}&am=750&cu=INR`}
+                    value={`upi://pay?pa=${qr}&am=${amount}&cu=INR`}
                     viewBox={`0 0 256 256`}
                     />       
                     
